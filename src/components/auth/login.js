@@ -5,19 +5,20 @@ import LoginForm from '../../forms/LoginForm'
 class Login extends React.Component {
 
     handleSubmit = data => {
+        this.props.history.push('/')
         console.log("SUCCESSFULLY", data)
     }
 
     render() {
         return (
-            <div className="container">
-                <h3>Welcome to ArenaMileplex</h3>
-                <h4>Please login</h4>
-                <LoginForm
-                    onSubmit={this.handleSubmit}
-                />
-            </div>
+            <div className="login-container container">
+                <div className='login-form-wrapper'>
+                    <LoginForm
+                        onSubmit={this.handleSubmit}
 
+                    />
+                </div>
+            </div>
         )
     }
 

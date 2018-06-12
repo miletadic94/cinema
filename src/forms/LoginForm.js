@@ -5,12 +5,14 @@ import InputField from '../form-fields/InputField'
 let LoginForm = ({handleSubmit}) => {
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit}>
             <Field
                 name="email"
                 component={InputField}
                 type="text"
                 placeholder="Your email"
+                style={{
+                    marginBottom: '15px'}}
             />
              <Field
                 name="password"
