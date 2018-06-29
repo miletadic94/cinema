@@ -1,28 +1,14 @@
+@import "./alice-carousel.css";
+
 body {
-  font-family: "Courier New";
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
   margin:0;
   padding: 0;
-  background-image:
-  linear-gradient(
-    to right, 
-    black,
-    grey, 
-    black
-  );
 }
-
-
 
 .replist {
   border-radius: 25px;
-  background-color: gray;
-  background-image:
-  linear-gradient(
-    to right, 
-    black,
-    grey, 
-    black
-  );
 }
 
 .login-form-wrapper {
@@ -41,28 +27,63 @@ body {
   margin-top: 100px;
 }
 
-.enjoy-css {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  width: 160px;
-  cursor: pointer;
-  padding: 9px 20px;
-  overflow: hidden;
-  border: 1px solid;
-  font: normal 19px/1 "Acme", Helvetica, sans-serif;
-  color: rgba(0,0,0,1);
-  text-align: center;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  background: #ffffff;
-  -webkit-box-shadow: 3px 3px 0 0 rgba(0,0,0,0.8) ;
-  box-shadow: 3px 3px 0 0 rgba(0,0,0,0.8) ;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+.nav {
+  margin-bottom: 50px;
 }
 
-.enjoy-css:active {
-  margin: 3px 0 0 3px;
-  -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.8) ;
-  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.8) ;
+.nav a {
+  color:black;
+}
+
+li.active {
+  border-bottom: 2px solid black;
+}
+.nav li:hover {
+  border-bottom: 2px solid black;
+}
+
+.btn.btn-movie {
+    color:black;
+    border: 2px solid black;
+    position: absolute;
+    top: 85%;
+    left:85%;
+    transform: translate(-50%, -50%);
+}
+
+.btn.btn-projection {
+  color:black;
+}
+
+.btn.btn-week {
+  cursor: pointer;
+  color:black;
+  text-align: center;
+  margin-left: 83px;
+  padding: 10px;
+}
+
+.btn.btn-imdb {
+  max-width: 80px;
+}
+
+.replist .img-fluid {
+  height: auto;
+  max-width: 200px;
+}
+
+.horizontal-line {
+  height: 1px;
+  background-color: black;
+  margin-top: 80px;
+}
+
+.container-youtube {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.pl-20 {
+  padding-left: 20px;
 }

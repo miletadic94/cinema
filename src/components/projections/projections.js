@@ -1,15 +1,19 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import Header from '../common/header'
-import movies from './moviesList'
+import movies from '../movies/moviesList'
+import CalendarButtons from '../common/calendarButtons'
+import ProjectionButton from './projectionButton'
 
-class Movies extends React.Component {
 
-
+class Projections extends React.Component {
     render() {
+        const { pathname } = this.props.history.location
         return (
             <div className="container">
-                <Header route={this.props.history.location.pathname} />
+                <Header route={pathname} />
+                <div className="row">
+                    <CalendarButtons />
+                </div>
                 {movies.map(movie =>
                     <div key={movie.id} className='replist'>
                         <div className='content-wrapper'>
@@ -22,8 +26,12 @@ class Movies extends React.Component {
                                     <h5>{movie["distribution year"]}</h5>
                                     <h5><b>{movie.genre}</b></h5>
                                     <h5>{movie.actor}</h5>
+                                    <hr />
+                                    <a href={`movie/${movie.id}`} className="btn btn-movie">  more info</a>
+                                 <ProjectionButton />
                                 </div>
                             </div>
+                            <hr className="horizontal-line" />
                         </div>
                     </div>
                 )}
@@ -32,4 +40,4 @@ class Movies extends React.Component {
     }
 }
 
-export default Movies
+export default Projections
