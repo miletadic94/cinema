@@ -9,7 +9,6 @@ for (var i = 0; i < 7; i++) {
 
 
 const whatDayIsIt = (day) => {
-    console.log(day)
     switch (day) {
         case 1:
         return 'pon'

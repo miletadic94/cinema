@@ -1,21 +1,20 @@
 import React from 'react'
 import LoginForm from '../../forms/LoginForm'
+import HeaderAdmin from '../common/headerAdmin'
+
 
 class Login extends React.Component {
 
-    handleSubmit = data => {
-        this.props.history.push('/')
+    handleSubmit = (data) => {
+        console.log(data)
     }
-
     render() {
         return (
-            <div className="login-container container">
-                <div className='login-form-wrapper'>
+            <div className="container">
+               <HeaderAdmin />
                     <LoginForm
                         onSubmit={this.handleSubmit}
-
                     />
-                </div>
             </div>
         )
     }

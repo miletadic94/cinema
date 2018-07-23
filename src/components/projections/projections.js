@@ -27,7 +27,7 @@ class Projections extends React.Component {
                                     <h5><b>{movie.genre}</b></h5>
                                     <h5>{movie.actor}</h5>
                                     <hr />
-                                    <a href={`movie/${movie.id}`} className="btn btn-movie">  more info</a>
+                                    <a href={`movie/${movie.id}`} className="btn btn-border float-right">  more info</a>
                                  <ProjectionButton />
                                 </div>
                             </div>

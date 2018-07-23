@@ -15,15 +15,15 @@ class Movies extends React.Component {
             <div className="container">
                 <Header route={pathname} />
                 <div className="row">
-                    <div className="col-4">
+                    <div className="col-sm-4">
                         <img className="img-fluid" src={this.movie.picture} />
                     </div>
-                    <div className="col-8">
-                        <div className="pl-20">
-                            <a src="">
+                    <div className="col-sm-8">
+                        <div className="pl-2 pt-3">
+                            <a href="">
                                 <img className="btn btn-imdb float-right" src="/img/IMDb_icon.png" />
                             </a>
-                            <a src="">
+                            <a href="">
                                 <img className="btn btn-imdb float-right" src="/img/rotten_tomatoes_icon.png" />
                             </a>
                             <h1>{this.movie.name}</h1>

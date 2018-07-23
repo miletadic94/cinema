@@ -7,11 +7,15 @@ const InputField = ({
     meta: { touched, error, warning }
   }) => {
     return (
-      <div className="rdt">
+      <div className="mb-15">
         <input className="form-control" {...input} placeholder={placeholder} type={type} />
-        {touched && ((error && <span className="alert alert-warning"> {error} </span>) || (warning && <span> {warning} </span>))}
+        {touched && ((error && <div className="valid valid-danger"> {error} </div>) || (warning && <span> {warning} </span>))}
       </div>
     )
   }
 
   export default InputField
+
+//   <div class="alert alert-danger" role="alert">
+//   <strong>Oh snap!</strong> Change a few things up and try submitting again.
+// </div>

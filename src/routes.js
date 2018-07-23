@@ -6,6 +6,8 @@ import Login from "../src/components/auth/login"
 
 import MovieList from "../src/components/movies/movieList"
 import SingleMovie from "../src/components/movies/singleMovie"
+import AllMovies from "../src/components/movies/admin/allMovies"
+import NewMovie from "../src/components/movies/admin/newMovie"
 
 import Projections from '../src/components/projections/projections'
 import SingleProjection from '../src/components/projections/singleProjection'
@@ -38,6 +40,16 @@ const Routes = () => (
                 exact
                 path="/movie/:id"
                 component={SingleMovie}
+            />
+            <Route
+                exact
+                path="/admin/movies"
+                component={AllMovies}
+            />
+            <Route
+                exact
+                path="/admin/movie/new"
+                component={NewMovie}
             />
             <Route
                 exact

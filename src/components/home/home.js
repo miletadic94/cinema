@@ -8,9 +8,10 @@ class Home extends React.Component {
 
 
     render() {
+        const {pathname} = this.props.history.location
         return (
             <div className="container">
-                <Header route={this.props.history.location.pathname} />
+                <Header route={pathname} />
             </div>
         )
     }

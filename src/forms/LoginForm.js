@@ -1,8 +1,10 @@
 import React from 'react'
-import {Field, reduxForm} from 'redux-form'
+import { Field, reduxForm } from 'redux-form'
 import InputField from '../form-fields/InputField'
+import { required } from '../helpers/validation'
 
-let LoginForm = ({handleSubmit}) => {
+
+let LoginForm = ({ handleSubmit }) => {
 
     return (
         <form className="login-form" onSubmit={handleSubmit}>
@@ -11,14 +13,14 @@ let LoginForm = ({handleSubmit}) => {
                 component={InputField}
                 type="text"
                 placeholder="Your email"
-                style={{
-                    marginBottom: '15px'}}
+                validate={required}
             />
-             <Field
+            <Field
                 name="password"
                 component={InputField}
                 type="passowrd"
                 placeholder="Your password"
+                validate={required}
             />
             <button type="submit" className="btn btn-dark"> Login </button>
         </form>
