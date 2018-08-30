@@ -2,43 +2,45 @@ import React from 'react'
 import classNames from 'classnames'
 
 class HeaderDropdownOptions extends React.Component {
-    
-    state = {
-        expanded: false,
+
+    constructor() {
+        super();
+
+        this.toggleDropdown = this.toggleDropdown.bind(this)
     }
 
-    toggleExpand = () => {
-        this.setState(prevState => ({
-            expanded: !prevState.expanded
-        }))
+    state = {
+        active: false,
     }
-    hideOptions  = () => {
+
+    toggleDropdown = (e) => {
+        const { active } = this.state
         this.setState({
-            expanded: false
+            active: !active,
         })
     }
 
-    handleClickOutside = event =>  this.hideOptions()
 
     render() {
 
         const optGroupClassName = classNames(
             'nav-item dropdown',
-            {open: this.state.expanded}
+            { open: this.props.expanded }
         )
 
         return (
 
-            <li className={'nav-item dropdown'} onClick={this.toggleExpand}>
-            <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">Action</a>
-              <a className="dropdown-item" href="#">Another action</a>
-              <a className="dropdown-item" href="#">Something else here</a>
-              <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">Separated link</a>
-            </div>
-          </li>
+            <li className={'nav-item dropdown'}>
+                <a className="nav-link dropdown-toggle" onClick={this.toggleDropdown}>Dropdown</a>
+                {this.state.active &&
+                    <div className="menu-dropdown">
+                        <a className="dropdown-item" href="#">Action</a>
+                        <a className="dropdown-item" href="#">Another action</a>
+                        <a className="dropdown-item" href="#">Something else here</a>
+                        <div className="dropdown-divider"></div>
+                        <a className="dropdown-item" href="#">Separated link</a>
+                    </div>}
+            </li>
         )
     }
 }

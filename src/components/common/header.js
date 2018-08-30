@@ -3,15 +3,6 @@ import HeaderDropdownOptions from './headerDropdownOptions'
 
 class Header extends React.Component {
 
-  state = ({
-    expand: false,
-  })
-
-  toggleDropdown = (e) => {
-    this.setState({
-      expand: true,
-    })
-  }
 
   render() {
     const { route } = this.props
@@ -23,10 +14,11 @@ class Header extends React.Component {
         <li className={"nav-item" + (route === '/movies' ? ' active' : '')}>
           <a className="nav-link" href="/movies">Movies</a>
         </li>
+        <HeaderDropdownOptions />
         <li className={"nav-item" + (route === '/projections' ? ' active' : '')}>
           <a className="nav-link" href="/projections">Projections</a>
         </li>
-        <li className="nav-item dropdown" onClick={this.toggleDropdown}>
+        <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle">
             Special
         </a>
