@@ -252,29 +252,47 @@ li.active {
 }
 
 .seat-taken {
+  -webkit-mask: url('../img/seat.svg') no-repeat 60% 60%;
+  mask: url('../img/seat.svg') no-repeat 60% 60%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: red;
+  mask-size: 70px 50px;
   float: left;
   text-align: center;
   margin: 1px;
-  border-radius: 5%;
-  line-height:50px;
-  background-color: red;
+  line-height: 50px;
   width: 9%;
-  height:  50px;  
-  border: 1px solid black;
+  height: 50px;
+  border: none;
   color: #ffffff;
   cursor: not-allowed;
+  margin-bottom: 10px;
+  font-size: 25px;
 }
 .seat-avaliable {
+  -webkit-mask: url('../img/seat.svg') no-repeat 60% 60%;
+  mask: url('../img/seat.svg') no-repeat 60% 60%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: green;
+  mask-size: 70px 50px;
   float: left;
   text-align: center;
   margin: 1px;
-  border-radius: 5%;
   line-height:50px;
-  background-color: green;
   width: 9%;
   height:  50px;  
-  border: 1px solid black;
+  border: none;
+  background-size: 80px 65px;
   color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+.seat-number {
+  display: inline-block;
+  position: relative;
+  top: -8px;
 }
 .row-number  {
   position: absolute;
@@ -290,6 +308,7 @@ li.active {
   text-align: center;
   margin: 2px;
   font-size: 20px;
+  margin-bottom: 10px;
 }
 .content-wrapper {
   position: relative;

@@ -41,14 +41,14 @@ class SingleProjection extends React.Component {
                                 disabled={item.taken}
                                 className={item.taken ? "seat-taken" : "seat-avaliable"}
                             >
-                                {item.seat}
+                                <span className="seat-number"> {item.seat} </span>
                             </button>
                         )
                         }
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                <button className="btn btn-get-tickets ">Get Your Tickets!</button>
+                    <button className="btn btn-get-tickets ">Get Your Tickets!</button>
                 </div>
             </div>
         )
