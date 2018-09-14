@@ -1,4 +1,5 @@
 import React from 'react'
+import DateTimePicker from 'react-datetime'
 
 export const inputField = ({
   input,
@@ -95,4 +96,21 @@ export const multipleDropdownField = ({
     )
   }
   return <div></div>
+}
+
+export const dateTimePicker = ({
+  input,
+  label,
+  placeholder,
+  meta: { touched, error, warning }
+}) => {
+  return (
+    <div className="">
+      <label className="pl-2">{label}</label>
+      <DateTimePicker
+        {...input}
+        placeholder={placeholder} />
+      {touched && ((error && <div className="valid valid-danger"> {error} </div>) || (warning && <span> {warning} </span>))}
+    </div>
+  )
 }

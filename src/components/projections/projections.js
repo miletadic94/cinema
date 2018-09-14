@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../common/header'
 import movies from '../movies/moviesList'
 import CalendarButtons from '../common/calendarButtons'
 import ProjectionButton from './projectionButton'
@@ -10,7 +9,6 @@ class Projections extends React.Component {
         const { pathname } = this.props.history.location
         return (
             <div className="container">
-                <Header route={pathname} />
                 <div className="row">
                     <CalendarButtons />
                 </div>

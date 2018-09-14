@@ -1,6 +1,5 @@
 import React from 'react'
 import LoginForm from '../../forms/LoginForm'
-import HeaderAdmin from '../common/headerAdmin'
 
 
 class Login extends React.Component {
@@ -11,7 +10,6 @@ class Login extends React.Component {
     render() {
         return (
             <div className="container">
-               <HeaderAdmin />
                     <LoginForm
                         onSubmit={this.handleSubmit}
                     />

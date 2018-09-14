@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { Router, Route, Switch } from "react-router-dom"
+import {history} from './createStore'
 import Home from "../src/components/home/home"
 import Login from "../src/components/auth/login"
 // import Register from "../src/components/auth/register"
@@ -11,57 +12,61 @@ import NewMovie from "../src/components/movies/admin/newMovie"
 
 import Projections from '../src/components/projections/projections'
 import SingleProjection from '../src/components/projections/singleProjection'
+import Header from './components/common/header/header';
 
 
 const Routes = () => (
-    <Router>
-        <Switch>
-            <Route
-                exact
-                path="/login"
-                component={Login}
-            />
-            {/* <Route
+    <Router history={history}>
+        <div className="container">
+            <Header history={history}/>
+            <Switch>
+                <Route
+                    exact
+                    path="/login"
+                    component={Login}
+                />
+                {/* <Route
                     exact
                     path="/register"
                     component={Register}
                 /> */}
-            <Route
-                exact
-                path="/"
-                component={Home}
-            />
-            <Route
-                exact
-                path="/movies"
-                component={MovieList}
-            />
-            <Route
-                exact
-                path="/movie/:id"
-                component={SingleMovie}
-            />
-            <Route
-                exact
-                path="/admin/movies"
-                component={AllMovies}
-            />
-            <Route
-                exact
-                path="/admin/movie/new"
-                component={NewMovie}
-            />
-            <Route
-                exact
-                path="/projections"
-                component={Projections}
-            />
-            <Route
-                exact
-                path="/projection/:id"
-                component={SingleProjection}
-            />
-        </Switch>
+                <Route
+                    exact
+                    path="/"
+                    component={Home}
+                />
+                <Route
+                    exact
+                    path="/movies"
+                    component={MovieList}
+                />
+                <Route
+                    exact
+                    path="/movie/:id"
+                    component={SingleMovie}
+                />
+                <Route
+                    exact
+                    path="/admin/movies"
+                    component={AllMovies}
+                />
+                <Route
+                    exact
+                    path="/admin/movie/new"
+                    component={NewMovie}
+                />
+                <Route
+                    exact
+                    path="/projections"
+                    component={Projections}
+                />
+                <Route
+                    exact
+                    path="/projections/:id"
+                    component={SingleProjection}
+                />
+            </Switch>
+        </div>
     </Router>
 )
 

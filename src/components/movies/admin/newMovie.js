@@ -1,5 +1,4 @@
 import React from 'react'
-import HeaderAdmin from '../../common/headerAdmin'
 import MovieForm from './movieForm'
 
 class NewMovie extends React.Component {
@@ -11,7 +10,6 @@ class NewMovie extends React.Component {
     render() {
         return (
             <div className="container">
-                <HeaderAdmin />
                 <div className="form-wrapper">
                     <MovieForm
                         onSubmit={this.handleSubmit}

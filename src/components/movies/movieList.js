@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../common/header'
 import movies from './moviesList'
 
 class MovieList extends React.Component {
@@ -8,7 +7,6 @@ class MovieList extends React.Component {
         const { pathname } = this.props.history.location
         return (
             <div className="container">
-                <Header route={pathname} />
                 {movies.map(movie =>
                     <div key={movie.id} className='replist'>
                         <div className='content-wrapper'>

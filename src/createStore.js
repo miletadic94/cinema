@@ -2,6 +2,10 @@ import { createStore, applyMiddleware } from "redux"
 import rootReducer from "./reducers"
 import { createLogger } from "redux-logger"
 
+const createHistory = typeof document !== undefined ? require('history/createBrowserHistory').default: () => {};
+
+export const history = createHistory();
+
 const configureStore = () => {
 
     //second parameter is inital state

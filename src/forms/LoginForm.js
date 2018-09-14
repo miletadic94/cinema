@@ -2,6 +2,7 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import InputField from '../form-fields/InputField'
 import { required } from '../helpers/validation'
+import { dateTimePicker } from '../form-fields/formFields';
 
 
 let LoginForm = ({ handleSubmit }) => {
@@ -21,6 +22,11 @@ let LoginForm = ({ handleSubmit }) => {
                 type="passowrd"
                 placeholder="Your password"
                 validate={required}
+            />
+            <Field
+                name="datetime"
+                placeholder='time'
+                component={dateTimePicker}
             />
             <button type="submit" className="btn btn-dark"> Login </button>
         </form>

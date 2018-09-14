@@ -1,5 +1,4 @@
 import React from 'react'
-import HeaderAdmin from '../../common/headerAdmin'
 import movies from '../moviesList';
 import Pagination from '../../common/pagination'
 import Loader from '../../common/loader'
@@ -9,7 +8,6 @@ class AllMovies extends React.Component {
     render() {
         return (
             <div className="container">
-                <HeaderAdmin />
                 <a href="/admin/movie/new" className="btn btn-border">new movie</a>
                 <Pagination />
                 <div className="table-responsive col-xs-6">

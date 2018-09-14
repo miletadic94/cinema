@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../common/header'
 
 class Home extends React.Component {
 
@@ -8,10 +7,8 @@ class Home extends React.Component {
 
 
     render() {
-        const {pathname} = this.props.history.location
         return (
             <div className="container">
-                <Header route={pathname} />
             </div>
         )
     }

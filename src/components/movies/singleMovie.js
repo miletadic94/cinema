@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../common/header'
 import moviesList from './moviesList'
 import YouTube from 'react-youtube'
 import ProjectionButton from '../projections/projectionButton'
@@ -13,7 +12,6 @@ class Movies extends React.Component {
         const { pathname } = this.props.history.location
         return (
             <div className="container">
-                <Header route={pathname} />
                 <div className="row">
                     <div className="col-sm-4">
                         <img className="img-fluid" src={this.movie.picture} />

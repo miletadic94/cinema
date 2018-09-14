@@ -1,4 +1,5 @@
 @import "./alice-carousel.css";
+@import "./dateTimePicker.css";
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -68,6 +69,11 @@ li.active {
 
 .btn.btn-imdb {
   max-width: 80px;
+}
+
+.btn.btn-get-tickets {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .replist .img-fluid {
@@ -240,3 +246,52 @@ li.active {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
+
+.hall {
+  padding-left: 7%;
+}
+
+.seat-taken {
+  float: left;
+  text-align: center;
+  margin: 1px;
+  border-radius: 5%;
+  line-height:50px;
+  background-color: red;
+  width: 9%;
+  height:  50px;  
+  border: 1px solid black;
+  color: #ffffff;
+  cursor: not-allowed;
+}
+.seat-avaliable {
+  float: left;
+  text-align: center;
+  margin: 1px;
+  border-radius: 5%;
+  line-height:50px;
+  background-color: green;
+  width: 9%;
+  height:  50px;  
+  border: 1px solid black;
+  color: #ffffff;
+}
+.row-number  {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 7%;
+}
+.row-number span {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 2px;
+  font-size: 20px;
+}
+.content-wrapper {
+  position: relative;
+}
+
