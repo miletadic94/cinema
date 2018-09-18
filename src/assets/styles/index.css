@@ -256,7 +256,7 @@ li.active {
   mask: url('../img/seat.svg') no-repeat 60% 60%;
   -webkit-mask-size: cover;
   mask-size: cover;
-  background-color: red;
+  background-color: #ba1818;
   mask-size: 70px 50px;
   float: left;
   text-align: center;
@@ -275,7 +275,26 @@ li.active {
   mask: url('../img/seat.svg') no-repeat 60% 60%;
   -webkit-mask-size: cover;
   mask-size: cover;
-  background-color: green;
+  background-color: #149e14;
+  mask-size: 70px 50px;
+  float: left;
+  text-align: center;
+  margin: 1px;
+  line-height:50px;
+  width: 9%;
+  height:  50px;  
+  border: none;
+  background-size: 80px 65px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+.seat-selected {
+  -webkit-mask: url('../img/seat.svg') no-repeat 60% 60%;
+  mask: url('../img/seat.svg') no-repeat 60% 60%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: #2945a8;
   mask-size: 70px 50px;
   float: left;
   text-align: center;

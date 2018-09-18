@@ -6,11 +6,26 @@ import ProjectionButton from './projectionButton';
 
 class SingleProjection extends React.Component {
 
-    handleClick = () => {
-        console.log("klinknuto")
+    state = {
+        selectedSeats: [],
     }
 
+    handleClick = (seat, e) => {
+        const {selectedSeats} = this.state
+        let temp = [...selectedSeats]
+        if(selectedSeats.includes(seat.id)) {
+            temp = temp.filter(item => item !== seat.id)
+        } else {
+            temp = [...temp, seat.id]
+        }
+        this.setState({
+            selectedSeats: temp
+        })
+    }
+
+
     render() {
+        const {selectedSeats} = this.state
         return (
             <div className="container" >
                 <div className="row">
@@ -37,9 +52,10 @@ class SingleProjection extends React.Component {
                         </div>
                         {mocked.map(item =>
                             <button
-                                onClick={() => this.handleClick()}
+                                key={item.id}
+                                onClick={this.handleClick.bind(this, item)} 
                                 disabled={item.taken}
-                                className={item.taken ? "seat-taken" : "seat-avaliable"}
+                                className={selectedSeats.includes(item.id) ? "seat-selected" : item.taken ? "seat-taken" : "seat-avaliable"}
                             >
                                 <span className="seat-number"> {item.seat} </span>
                             </button>

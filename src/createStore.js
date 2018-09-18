@@ -11,8 +11,10 @@ const configureStore = () => {
     //second parameter is inital state
     //its overriden in reducers
     return createStore(rootReducer,
-        {},
-        applyMiddleware(createLogger()))
+        {}
+        // ,
+        // applyMiddleware(createLogger())
+    )
 }
 
 export default configureStore

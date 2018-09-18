@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router, Route, Switch } from "react-router-dom"
-import {history} from './createStore'
+import { history } from './createStore'
 import Home from "../src/components/home/home"
 import Login from "../src/components/auth/login"
 // import Register from "../src/components/auth/register"
@@ -13,12 +13,14 @@ import NewMovie from "../src/components/movies/admin/newMovie"
 import Projections from '../src/components/projections/projections'
 import SingleProjection from '../src/components/projections/singleProjection'
 import Header from './components/common/header/header';
+import HeaderAdmin from './components/common/header/headerAdmin'
+import EditMovie from './components/movies/admin/editMovie';
 
 
 const Routes = () => (
     <Router history={history}>
         <div className="container">
-            <Header history={history}/>
+            <HeaderAdmin history={history} />
             <Switch>
                 <Route
                     exact
@@ -52,8 +54,13 @@ const Routes = () => (
                 />
                 <Route
                     exact
-                    path="/admin/movie/new"
+                    path="/admin/movies/new"
                     component={NewMovie}
+                />
+                <Route
+                    exact
+                    path="/admin/movies/:id"
+                    component={EditMovie}
                 />
                 <Route
                     exact

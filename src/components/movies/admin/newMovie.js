@@ -1,10 +1,15 @@
 import React from 'react'
 import MovieForm from './movieForm'
+import { base64Converter } from '../../../helpers/base64Converter';
 
 class NewMovie extends React.Component {
 
     handleSubmit = (data) => {
-        console.log("Data ", data)
+        console.log('dejta', data)
+        // base64Converter(data.picture).then(res => {
+        //     data.picture = res
+        // }
+        // )
     }
 
     render() {

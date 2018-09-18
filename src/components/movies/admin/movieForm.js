@@ -1,8 +1,9 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import {textAreaField, inputField, dropdownField, multipleDropdownField} from '../../../form-fields/formFields'
+import { textAreaField, inputField, multipleDropdownField, datePicker } from '../../../form-fields/formFields'
+import FileUpload from '../../../form-fields/FileUpload'
 import { required } from '../../../helpers/validation'
-import movies from '../../movies/moviesList'
+import movies, { genres } from '../../movies/moviesList'
 let MovieForm = ({ handleSubmit }) => {
     return (
         <form className="" onSubmit={handleSubmit} >
@@ -12,29 +13,94 @@ let MovieForm = ({ handleSubmit }) => {
                 type="text"
                 label="movie name"
                 placeholder="movie name"
-                validate={required}
+                // validate={required}
             />
-            {/* <Field
+            <Field
+                name="distributionYear"
+                component={inputField}
+                type="number"
+                label="distribution year"
+                placeholder="Distribution Year"
+                // validate={required}
+            />
+            <Field
+                name="duration"
+                component={inputField}
+                type="number"
+                label="duration"
+                placeholder="Duration in minutes"
+                // validate={required}
+            />
+            <Field
                 name="genre"
-                options={movies}
-                component={dropdownField}
-                placeholder="Genre"
-                validate={required}
-            /> */}
-                <Field
-                name="genre"
-                options={movies}
+                options={genres}
+                type="select-multiple"
                 component={multipleDropdownField}
                 label="genre"
                 placeholder="genre"
-                validate={required}
+                // validate={required}
             />
             <Field
-                name="year"
+                name="releaseDate"
+                component={datePicker}
+                label="release date"
+                placeholder="Date of Release"
+                // validate={required}
+            />
+            <Field
+                name="sinopsys"
                 component={textAreaField}
-                label="movie name"
-                placeholder="Year"
-                validate={required}
+                label="synopsis"
+                placeholder="Movie details"
+                // validate={required}
+            />
+            <Field
+                name="director"
+                component={inputField}
+                type="text"
+                label="director"
+                placeholder="Director"
+                // validate={required}
+            />
+            <Field
+                name="actors"
+                component={inputField}
+                type="text"
+                label="actors"
+                placeholder="Actors"
+                // validate={required}
+            />
+            <Field
+                name="imdbLink"
+                component={inputField}
+                type="text"
+                label="imdb"
+                placeholder="Imdb Link"
+                // validate={required}
+            />
+            <Field
+                name="rottenTomatoesLink"
+                component={inputField}
+                type="text"
+                label="rotten tomatoes"
+                placeholder="Rotten Tomatoes Link"
+                // validate={required}
+            />
+            <Field
+                name="trailerId"
+                component={inputField}
+                type="text"
+                label="Trailer"
+                placeholder="Link To Youtube Trailer"
+                // validate={required}
+            />
+            <Field
+                name="picture"
+                component={FileUpload}
+                type="file"
+                label="Picture"
+                placeholder="Picture"
+                // validate={required}
             />
             <button type="submit" className="btn btn-black">Add</button>
         </form>
