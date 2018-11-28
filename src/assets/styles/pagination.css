@@ -1,0 +1,8 @@
+.pagination .page-link {
+    color: #383434;
+}
+
+.pagination .active {
+    color: white;
+    background-color: #383434;
+}

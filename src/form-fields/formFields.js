@@ -112,7 +112,7 @@ export const checkboxField = ({
   return (
     <div className="col-auto my-1">
     <div className="custom-control custom-checkbox mr-sm-2">
-    <input {...input} type="checkbox" id={id} className={`custom-control-input ${error ? 'is-invalid' : ''}`} />
+    <input {...input} type="checkbox" id={id} checked={input.value} className={`custom-control-input ${error ? 'is-invalid' : ''}`} />
       <label className="custom-control-label" htmlFor={id}>{label}</label>
       {touched && ((error && <div className="d-block invalid-feedback"> {error} </div>) || (warning && <span> {warning} </span>))}
     </div>

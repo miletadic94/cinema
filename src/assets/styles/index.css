@@ -3,6 +3,7 @@
 @import "./footer.css";
 @import "./nav.css";
 @import "./button.css";
+@import "./pagination.css";
 
 html, body {
   height: 100%;

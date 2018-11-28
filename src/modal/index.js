@@ -22,7 +22,7 @@ class Modal extends Component {
                             {modalMessage}
                         </div>
                         <div className="modal-footer">
-                            <button onClick={toggleModal} type="button" className="btn btn-secondary" >{modalButtonText}</button>
+                            <button onClick={modalButtonAction} type="button" className="btn btn-primary" >{modalButtonText}</button>
                             <button onClick={toggleModal} type="button" className="btn btn-secondary" >Close</button>
                         </div>
                     </div>

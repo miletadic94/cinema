@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form'
 import { textAreaField, inputField, dropdownField, multipleDropdownField, datePicker, checkboxField } from '../../../form-fields/formFields'
 import FileUpload from '../../../form-fields/FileUpload'
 import { required } from '../../../helpers/validation'
-import movies, { genres } from '../../movies/moviesList'
+import { genres } from '../../movies/moviesList'
 
 const prices = [{ id: 0, name: 100 }, { id: 1, name: 200 }];
 
@@ -12,7 +12,8 @@ class MovieForm extends React.Component {
     handle3DChange = (e) => {
         const { value } = e.target
         const { change, touch } = this.props
-        if (value === "true") {
+        console.log(value)
+        if (value) {
             change('price', 0)
             touch('price')
         } else {
@@ -23,8 +24,7 @@ class MovieForm extends React.Component {
 
     render() {
 
-        const { initialValues, openDeleteModal, handleSubmit } = this.props
-
+        const { initialValues, handleSubmit } = this.props
         return (
             <form onSubmit={handleSubmit} >
                 <div className="row mb-2">
@@ -40,8 +40,8 @@ class MovieForm extends React.Component {
                     </div>
                     <div className="col-2">
                         <Field
-                            name="3d"
-                            id="3d"
+                            name="td"
+                            id="td"
                             component="input"
                             component={checkboxField}
                             label="3d"
@@ -191,17 +191,9 @@ class MovieForm extends React.Component {
                         />
                     </div>
                 </div>
-                {
-                    initialValues ?
-                        <div className="text-center mb-2">
-                            <button type="submit" className="btn btn-black">Edit Movie!</button>
-                            <button type="button" className="btn btn-danger ml-2">Delete Movie!</button>
-                        </div>
-                        :
-                        <div className="text-center mb-2">
-                            <button type="submit" className="btn btn-black">Create New Movie!</button>
-                        </div>
-                }
+                <div className="text-center m-3">
+                    <button type="submit" className="btn btn-primary">{initialValues ? 'Edit Movie!' : 'Create New Movie!'}</button>
+                </div>
             </form>
         )
     }
@@ -209,9 +201,6 @@ class MovieForm extends React.Component {
 
 MovieForm = reduxForm({
     form: 'movieForm',
-    initialValues: {
-        price: 0,
-    }
 })(MovieForm)
 
 export default MovieForm
