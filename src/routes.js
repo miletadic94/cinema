@@ -1,26 +1,26 @@
 import React from 'react'
 import { Router, Route, Switch } from "react-router-dom"
 import { history } from './createStore'
-import Home from "../src/components/home/home"
-import Login from "../src/components/auth/login"
-// import Register from "../src/components/auth/register"
+import Home from "../src/routes/home/home"
+import Login from "../src/routes/auth/login"
+// import Register from "../src/routes/auth/register"
 
-import MovieList from "../src/components/movies/movieList"
-import SingleMovie from "../src/components/movies/singleMovie"
-import AllMovies from "../src/components/movies/admin/allMovies"
-import NewMovie from "../src/components/movies/admin/newMovie"
+import MovieList from "../src/routes/movies/movieList"
+import SingleMovie from "../src/routes/movies/singleMovie"
+import AllMovies from "../src/routes/movies/admin/allMovies"
+import NewMovie from "../src/routes/movies/admin/newMovie"
 
-import Projections from '../src/components/projections/projections'
-import SingleProjection from '../src/components/projections/singleProjection'
-import Header from './components/common/header/header';
-import HeaderAdmin from './components/common/header/headerAdmin'
-import EditMovie from './components/movies/admin/editMovie';
+import ProjectionList from '../src/routes/projections/projectionList'
+import SingleProjection from '../src/routes/projections/singleProjection'
+import Wrapper from './components/wrapper';
+import HeaderAdmin from './routes/common/header/headerAdmin'
+import EditMovie from './routes/movies/admin/editMovie';
+import Modal from './modal';
 
 
 const Routes = () => (
     <Router history={history}>
-        <div className="container">
-            <HeaderAdmin history={history} />
+            <Wrapper history={history} >
             <Switch>
                 <Route
                     exact
@@ -65,7 +65,7 @@ const Routes = () => (
                 <Route
                     exact
                     path="/projections"
-                    component={Projections}
+                    component={ProjectionList}
                 />
                 <Route
                     exact
@@ -73,8 +73,9 @@ const Routes = () => (
                     component={SingleProjection}
                 />
             </Switch>
-        </div>
+            <Modal />
+            </Wrapper>
     </Router>
 )
 
-export default Routes
+export default Routes;

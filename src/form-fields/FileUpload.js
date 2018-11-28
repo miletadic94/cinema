@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { base64Converter } from '../helpers/base64Converter';
 
 export default class FileUpload extends Component {
+
     constructor(props) {
         super(props)
         this.onChange = this.onChange.bind(this)
@@ -34,20 +35,20 @@ export default class FileUpload extends Component {
                 :
                 <div className="mb-15">
                     <label className="d-flex justify-content-center">{label}</label>
-                    <label className="d-flex justify-content-center" htmlFor="image">
+                    <label className="d-flex justify-content-center" htmlFor="picture">
                         <input
-                            id="image"
-                            name="image"
+                            id="picture"
+                            name="picture"
                             style={{ display: 'none' }}
                             className="form-control"
                             type='file'
                             accept='.jpg, .png, .jpeg'
                             onChange={this.onChange}
                         />
-                        <img 
-                        src={value}
-                         height="160"
-                          width="140"/>
+                        <img
+                            src={value}
+                            height="160"
+                            width="140" />
                     </label>
                 </div>
         )

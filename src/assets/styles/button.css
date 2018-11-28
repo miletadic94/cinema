@@ -1,0 +1,5 @@
+.btn-outline-light:hover {
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+}

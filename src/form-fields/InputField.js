@@ -16,6 +16,6 @@ const InputField = ({
 
   export default InputField
 
-//   <div class="alert alert-danger" role="alert">
+//   <div className="alert alert-danger" role="alert">
 //   <strong>Oh snap!</strong> Change a few things up and try submitting again.
 // </div>

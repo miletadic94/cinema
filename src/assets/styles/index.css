@@ -1,11 +1,15 @@
-@import "./alice-carousel.css";
+@import "./carousel.css";
 @import "./dateTimePicker.css";
+@import "./footer.css";
+@import "./nav.css";
+@import "./button.css";
 
-body {
+html, body {
+  height: 100%;
+  width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: black;
-  margin:0;
-  padding: 0;
+  color: #222;
+  background-color: #f8f9fa;
 }
 
 .replist {
@@ -100,12 +104,6 @@ li.active {
 	width: 100%;
 	height: 100%;
 }
-
-/* .container-youtube {
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-} */
 
 .pl-20 {
   padding-left: 20px;
@@ -225,7 +223,7 @@ li.active {
     line-height: 26px;
   }
 }
-.menu-dropdown {
+/* .menu-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -245,7 +243,7 @@ li.active {
   border-radius: .25rem;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-}
+} */
 
 .hall {
   padding-left: 7%;
@@ -333,3 +331,8 @@ li.active {
   position: relative;
 }
 
+.box-shadow {
+  -webkit-box-shadow: 18px 10px 38px 15px rgba(0,0,0,0.8);
+-moz-box-shadow: 18px 10px 38px 15px rgba(0,0,0,0.8);
+box-shadow: 18px 10px 38px 15px rgba(0,0,0,0.8);
+}

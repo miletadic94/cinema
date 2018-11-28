@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from "redux"
-import rootReducer from "./reducers"
+import rootReducer from './redux/reducer'
 import { createLogger } from "redux-logger"
 
 const createHistory = typeof document !== undefined ? require('history/createBrowserHistory').default: () => {};
@@ -12,7 +12,7 @@ const configureStore = () => {
     //its overriden in reducers
     return createStore(rootReducer,
         {}
-        // ,
+        ,
         // applyMiddleware(createLogger())
     )
 }

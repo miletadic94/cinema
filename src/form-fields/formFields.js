@@ -4,15 +4,22 @@ import DateTimePicker from 'react-datetime'
 export const inputField = ({
   input,
   label,
+  icon,
   placeholder,
   type,
   meta: { touched, error, warning }
 }) => {
   return (
-    <div className="mb-15">
-      <label className="pl-2">{label}</label>
-      <input className="form-control" {...input} placeholder={placeholder} type={type} />
-      {touched && ((error && <div className="valid valid-danger"> {error} </div>) || (warning && <span> {warning} </span>))}
+    <div className="form-group has-danger">
+      <label className="pl-2">
+        {label}
+        {icon ?
+          <i className={`${icon} ml-2`} aria-hidden="true" />
+          : null
+        }
+      </label>
+      <input className={`form-control ${error ? 'is-invalid' : ''}`} {...input} placeholder={placeholder} type={type} />
+      {touched && ((error && <div className="d-block invalid-feedback"> {error} </div>) || (warning && <span> {warning} </span>))}
     </div>
   )
 }
@@ -24,14 +31,13 @@ export const textAreaField = ({
   meta: { touched, error, warning }
 }) => {
   return (
-    <div className="mb-15">
+    <div>
       <label className="pl-2">{label}</label>
-      <textarea className="form-control" {...input} placeholder={placeholder} />
-      {touched && ((error && <div className="valid valid-danger"> {error} </div>) || (warning && <span> {warning} </span>))}
+      <textarea className={`form-control ${error ? 'is-invalid' : ''}`} {...input} placeholder={placeholder} />
+      {touched && ((error && <div className="d-block invalid-feedback"> {error} </div>) || (warning && <span> {warning} </span>))}
     </div>
   )
 }
-
 
 export const dropdownField = ({
   input,
@@ -52,13 +58,13 @@ export const dropdownField = ({
 
   if (options) {
     return (
-      <div className="mb-15">
+      <div>
         <label className="pl-2">{label}</label>
-        <select {...input} className="form-control">
+        <select {...input} className={`form-control ${error ? 'is-invalid' : ''}`}>
           <option value="">Select</option>
           {Object.keys(options).map(renderSelectOptions)}
         </select>
-        {touched && ((error && <div className="valid valid-danger"> {error} </div>) || (warning && <span> {warning} </span>))}
+        {touched && ((error && <div className="d-block invalid-feedback"> {error} </div>) || (warning && <span> {warning} </span>))}
       </div>
     )
   }
@@ -84,17 +90,35 @@ export const multipleDropdownField = ({
 
   if (options) {
     return (
-      <div className="mb-15">
+      <div>
         <label className="pl-2">{label}</label>
-        <select multiple {...input} className="form-control">
+        <select multiple {...input} className={`form-control ${error ? 'is-invalid' : ''}`}>
           <option value="" disabled={true}>Select</option>
           {Object.keys(options).map(renderSelectOptions)}
         </select>
-        {touched && ((error && <div className="valid valid-danger"> {error} </div>) || (warning && <span> {warning} </span>))}
+        {touched && ((error && <div className="d-block invalid-feedback"> {error} </div>) || (warning && <span> {warning} </span>))}
       </div>
     )
   }
   return <div></div>
+}
+
+export const checkboxField = ({
+  input,
+  label,
+  id,
+  meta: { touched, error, warning }
+}) => {
+  return (
+    <div className="col-auto my-1">
+    <div className="custom-control custom-checkbox mr-sm-2">
+    <input {...input} type="checkbox" id={id} className={`custom-control-input ${error ? 'is-invalid' : ''}`} />
+      <label className="custom-control-label" htmlFor={id}>{label}</label>
+      {touched && ((error && <div className="d-block invalid-feedback"> {error} </div>) || (warning && <span> {warning} </span>))}
+    </div>
+  </div>
+ 
+  )
 }
 
 export const datePicker = ({
@@ -104,13 +128,13 @@ export const datePicker = ({
   meta: { touched, error, warning }
 }) => {
   return (
-    <div className="mb-15">
+    <div>
       <label className="pl-2">{label}</label>
       <DateTimePicker
         {...input}
         timeFormat={false}
         placeholder={placeholder} />
-      {touched && ((error && <div className="valid valid-danger"> {error} </div>) || (warning && <span> {warning} </span>))}
+      {touched && ((error && <div className="d-block invalid-feedback"> {error} </div>) || (warning && <span> {warning} </span>))}
     </div>
   )
 }
