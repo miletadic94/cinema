@@ -9,6 +9,7 @@ export const inputField = ({
   type,
   meta: { touched, error, warning }
 }) => {
+  console.log(error)
   return (
     <div className="form-group has-danger">
       <label className="pl-2">
@@ -18,7 +19,7 @@ export const inputField = ({
           : null
         }
       </label>
-      <input className={`form-control ${error ? 'is-invalid' : ''}`} {...input} placeholder={placeholder} type={type} />
+      <input className={`form-control ${touched && error ? 'is-invalid' : ''}`} {...input} placeholder={placeholder} type={type} />
       {touched && ((error && <div className="d-block invalid-feedback"> {error} </div>) || (warning && <span> {warning} </span>))}
     </div>
   )

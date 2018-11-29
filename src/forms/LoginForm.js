@@ -1,34 +1,44 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import InputField from '../form-fields/InputField'
+import { inputField } from '../form-fields/formFields'
 import { required } from '../helpers/validation'
 
 
-let LoginForm = ({ handleSubmit }) => {
+let LoginForm = ({ onSubmit, handleSubmit, error }) => {
+    console.log('er', error)
 
     return (
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
             <Field
-                name="email"
-                component={InputField}
+                name="username"
+                component={inputField}
                 type="text"
                 placeholder="Your email"
-                validate={required}
+                validate={[required]}
             />
             <Field
                 name="password"
-                component={InputField}
+                component={inputField}
                 type="passowrd"
                 placeholder="Your password"
                 validate={required}
             />
-            <button type="submit" className="btn btn-dark"> Login </button>
+            <div className="row">
+                <div className="col col-lg text-center">
+                    <button type="submit" className="btn btn-dark"> Login </button>
+                </div>
+            </div>
+
+            <br />
+            {/* TODO: css class for submission errors */}
+            {error ? <div >{error.message}</div> : null}
         </form>
     )
 }
 
 LoginForm = reduxForm({
-    form: 'login'
+    form: 'login',
+    enableReinitialize: true,
 })(LoginForm)
 
 export default LoginForm

@@ -42,6 +42,7 @@ class SlideShow extends React.Component {
                     {
                         this.slike.map((item, index) =>
                             <li
+                                key={index}
                                 className={index === current ? "active" : ""}
                                 onClick={this.showSlide.bind(this, index)}
                             />
@@ -51,7 +52,7 @@ class SlideShow extends React.Component {
                 <div className="carousel-inner fluid">
                     {
                         this.slike.map((item, index) =>
-                            <div className={`carousel-item ${index === current ? "active" : ""}`}>
+                            <div key={index} className={`carousel-item ${index === current ? "active" : ""}`}>
                                 <img src={slika} className="img-fluid" />
                                 <div className="carousel-caption">
                                     <button type="button" className="btn btn-outline-light btn-md">

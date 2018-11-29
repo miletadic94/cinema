@@ -24,9 +24,9 @@ class MovieForm extends React.Component {
 
     render() {
 
-        const { initialValues, handleSubmit } = this.props
+        const { initialValues, onSubmit, handleSubmit } = this.props
         return (
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit(onSubmit)} >
                 <div className="row mb-2">
                     <div className="col-10">
                         <Field

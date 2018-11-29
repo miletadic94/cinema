@@ -14,7 +14,7 @@ class Modal extends Component {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title">{modalTitle}</h5>
-                            <button onClick={toggleModal} type="button" className="close" aria-label="Close">
+                            <button onClick={() => toggleModal()} type="button" className="close" aria-label="Close">
                                 <span>&times;</span>
                             </button>
                         </div>
@@ -22,8 +22,8 @@ class Modal extends Component {
                             {modalMessage}
                         </div>
                         <div className="modal-footer">
-                            <button onClick={modalButtonAction} type="button" className="btn btn-primary" >{modalButtonText}</button>
-                            <button onClick={toggleModal} type="button" className="btn btn-secondary" >Close</button>
+                            <button onClick={() => modalButtonAction()} type="button" className="btn btn-primary" >{modalButtonText}</button>
+                            <button onClick={() => toggleModal()} type="button" className="btn btn-secondary" >Close</button>
                         </div>
                     </div>
                 </div>
