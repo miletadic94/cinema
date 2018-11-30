@@ -12,7 +12,6 @@ class MovieForm extends React.Component {
     handle3DChange = (e) => {
         const { value } = e.target
         const { change, touch } = this.props
-        console.log(value)
         if (value) {
             change('price', 0)
             touch('price')

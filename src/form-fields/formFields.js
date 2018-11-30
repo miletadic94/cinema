@@ -9,7 +9,6 @@ export const inputField = ({
   type,
   meta: { touched, error, warning }
 }) => {
-  console.log(error)
   return (
     <div className="form-group has-danger">
       <label className="pl-2">

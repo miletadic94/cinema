@@ -4,7 +4,6 @@ import Footer from './footer';
 
 class Wrapper extends React.Component {
 
-
     render() {
         const { pathname } = this.props.history.location
         const { children } = this.props

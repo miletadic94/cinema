@@ -3,7 +3,7 @@ import { Router, Route, Switch } from "react-router-dom"
 import { history } from './createStore'
 import Home from "../src/routes/home/home"
 import Login from "../src/routes/auth/login"
-// import Register from "../src/routes/auth/register"
+import Register from "../src/routes/auth/register"
 
 import MovieList from "../src/routes/movies/movieList"
 import SingleMovie from "../src/routes/movies/singleMovie"
@@ -13,7 +13,6 @@ import NewMovie from "../src/routes/movies/admin/newMovie"
 import ProjectionList from '../src/routes/projections/projectionList'
 import SingleProjection from '../src/routes/projections/singleProjection'
 import Wrapper from './components/wrapper';
-import HeaderAdmin from './routes/common/header/headerAdmin'
 import EditMovie from './routes/movies/admin/editMovie';
 import Modal from './modal';
 
@@ -27,11 +26,11 @@ const Routes = () => (
                     path="/login"
                     component={Login}
                 />
-                {/* <Route
+               <Route
                     exact
                     path="/register"
                     component={Register}
-                /> */}
+                /> 
                 <Route
                     exact
                     path="/"
